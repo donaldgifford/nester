@@ -1,0 +1,13 @@
+auth:
+    client_id: my-client-id
+    client_secret: my-client-secret
+    redirect_uri: http://localhost:8080
+    token_file_name: token.json
+nest:
+    project_id: my-project-id
+    device_id: my-device-id
+influxdb:
+    url: http://localhost:8086
+    token: my-token
+    org: my-org
+    bucket: my-bucket
