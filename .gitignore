@@ -26,3 +26,5 @@ nest-management.json
 
 .nester.yaml
 
+build/
+

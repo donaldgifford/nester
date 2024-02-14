@@ -1,12 +1,19 @@
 # nester
+
 Go tool for pulling Nest Data to InfluxDB
+
+Blog going over OAuth2 and the nightmare of setting up Nest devices [here](https://donald.dev/go-and-oauth2-part-1/)
+
+[Install docs](/INSTALL.md)
 
 **NOTE** This will only work if ran locally on a machine. The OAuth2 flow requires the local machine browser to open as its configured currently for localhost only. 
 
 ## what is this?
+
 nester is a tool for polling a Nest Thermostat and pushing data to InfluxDB. It uses OAuth2 to manage tokens for requests made to the Nest API.
 
 ## Setup and usage
+
 either copy the `.nester.yaml.example` config file to where you will run the binary from or you can run the `nester init config` command to generate the config file.
 
 After that you can enter in all the relevant information into the config file and try running it using `nester run`. Add the `-p` flag if you want to output the metrics received to stdout.
@@ -31,9 +38,9 @@ INFLUXDB_ADMIN_TOKEN=useradminsecret
 
 Change the values to whatever you want to use. Then you can access it locally at `http://localhost:8086`
 
-
 ## Todos 
-- [ ] Setup GitHub Actions for builds and packages/releases
+
+- [x] Setup GitHub Actions for builds and packages/releases
 - [ ] Setup CI/tests? coverage etc
 - [ ] Docs for deploying into a cronjob
 - [ ] Maybe add http endpoints to run as a service with a `/metrics` and `/status` for Prom style metrics. Also this might make it easier to deal with the OAuth2 flow stuff instead of spitting up a endpoint just for the ApprovalFlow.

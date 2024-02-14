@@ -139,7 +139,8 @@ func (a *AuthConfig) authenticate() *oauth2.Token {
 		w.Write([]byte("<p style=font-size:xx-large;text-align:center>return to your terminal</p>"))
 		codeChannel <- r.URL.Query().Get("code")
 	})
-	openBrowser(url)
+	// openBrowser(url)
+	fmt.Println(url)
 	go func() {
 		if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			log.Fatal(err)
