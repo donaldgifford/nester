@@ -21,12 +21,12 @@ jobs:
       - name: Build and push nester
         uses: docker/build-push-action@v5
         with:
-          context: Dockerfile.nester
+          context: .Dockerfile.nester
           push: true
           tags: donaldgifford/nester:latest
       - name: Build and push custom caddy
         uses: docker/build-push-action@v5
         with:
-          context: Dockerfile.Caddy
+          context: .Dockerfile.Caddy
           push: true
           tags: donaldgifford/nester-caddy:latest
