@@ -5,8 +5,8 @@ services:
     container_name: influxdb
     image: influxdb:2.7
     ports:
-      - "8086:8086"
-      - "8088:8088"
+      - "127.0.0.1:8086:8086"
+      - "127.0.0.1:8088:8088"
     volumes:
       - influxdb-storage:/var/lib/influxdb
     environment:
@@ -17,19 +17,25 @@ services:
       - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUXDB_ADMIN_PASSWORD}
       - DOCKER_INFLUXDB_INIT_ORG=${INFLUXDB_ORG}
       - DOCKER_INFLUXDB_INIT_BUCKET=${INFLUXDB_BUCKET}
-      #- DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=${INFLUXDB_ADMIN_TOKEN}
       - INFLUXDB_LOGGING_LEVEL=debug
       - INFLUXDB_DATA_QUERY_LOG_ENABLED=true
+  caddy:
+    build:
+      dockerfile: Dockerfile.Caddy
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
   nester:
     build:
       dockerfile: Dockerfile.nester
     restart: unless-stopped
-    command: daemon
     ports:
       - 8080:8080
     volumes:
       - $PWD/.nester.yaml:/.nester.yaml
       - $PWD/token.json:/token.json
-
 volumes:
   influxdb-storage:

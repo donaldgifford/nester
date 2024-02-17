@@ -77,6 +77,7 @@ func converTraitToPoint(t Traits) *write.Point {
 			"ThermostatTemperatureSetpoint": convertCelsiusToFahrenheit(t.ThermostatTemperatureSetpoint.HeatCelsius),
 			"AmbientHumidityPercent":        t.Humidity.AmbientHumidityPercent,
 			"Status":                        convertStatusToBool(t.Connectivity.Status),
+			"HVACMode":                      t.ThermostatHvac.Status,
 		},
 		timestamp: time.Now(),
 	}
