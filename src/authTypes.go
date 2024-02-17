@@ -29,6 +29,7 @@ type Traits struct {
 	} `json:"sdm.devices.traits.Temperature"`
 	ThermostatEco struct {
 		AvailableModes []string `json:"availableModes"`
+		Mode           string   `json:"mode"`
 		CoolCelsius    float64  `json:"coolCelsius"`
 		HeatCelsius    float64  `json:"heatCelsius"`
 	} `json:"sdm.devices.traits.ThermostatEco"`
@@ -41,5 +42,6 @@ type Traits struct {
 	} `json:"sdm.devices.traits.ThermostatMode"`
 	ThermostatTemperatureSetpoint struct {
 		HeatCelsius float64 `json:"heatCelsius"`
+		CoolCelsius float64 `json:"coolCelsius"`
 	} `json:"sdm.devices.traits.ThermostatTemperatureSetpoint"`
 }
