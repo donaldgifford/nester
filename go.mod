@@ -3,7 +3,6 @@ module github.com/donaldgifford/nester
 go 1.21.4
 
 require (
-	github.com/influxdata/influxdb-client-go v1.4.0
 	github.com/influxdata/influxdb-client-go/v2 v2.13.0
 	github.com/spf13/cobra v1.8.0
 	github.com/spf13/viper v1.18.2
