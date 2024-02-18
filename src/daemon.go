@@ -5,10 +5,13 @@ import (
 	"fmt"
 	"log"
 	"time"
+
+	"github.com/spf13/viper"
 )
 
 func Daemon(ctx context.Context) error {
-	defaultTick := 5 * time.Minute
+	defaultTickConfig := viper.GetInt64("daemon.default_tick")
+	defaultTick := time.Duration(defaultTickConfig) * time.Minute
 	for {
 		select {
 		case <-ctx.Done():

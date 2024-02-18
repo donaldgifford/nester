@@ -1,0 +1,15 @@
+[Unit]
+Description=Nester app for pulling nest data
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/nester/
+Environment="PATH=/opt/nester"
+ExecStart=/opt/nester/nester daemon
+ExecReload=/bin/kill -s HUP $MAINPID
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
