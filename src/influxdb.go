@@ -45,11 +45,11 @@ type NestMetric struct {
 	timestamp   time.Time
 }
 
-func convertCelsiusToFahrenheit(celsius float64) float64 {
+func ConvertCelsiusToFahrenheit(celsius float64) float64 {
 	return celsius*9/5 + 32
 }
 
-func convertStatusToBool(s string) bool {
+func ConvertStatusToBool(s string) bool {
 	if s == "ONLINE" {
 		return true
 	} else {
@@ -73,10 +73,10 @@ func converTraitToPoint(t Traits) *write.Point {
 			"type":   "nest",
 		},
 		fields: map[string]interface{}{
-			"AmbientTempetureCelcius":       convertCelsiusToFahrenheit(t.Temperature.AmbientTemperatureCelsius),
-			"ThermostatTemperatureSetpoint": convertCelsiusToFahrenheit(t.ThermostatTemperatureSetpoint.HeatCelsius),
+			"AmbientTempetureCelcius":       ConvertCelsiusToFahrenheit(t.Temperature.AmbientTemperatureCelsius),
+			"ThermostatTemperatureSetpoint": ConvertCelsiusToFahrenheit(t.ThermostatTemperatureSetpoint.HeatCelsius),
 			"AmbientHumidityPercent":        t.Humidity.AmbientHumidityPercent,
-			"Status":                        convertStatusToBool(t.Connectivity.Status),
+			"Status":                        ConvertStatusToBool(t.Connectivity.Status),
 			"HVACMode":                      t.ThermostatHvac.Status,
 		},
 		timestamp: time.Now(),
