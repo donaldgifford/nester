@@ -6,7 +6,7 @@ require (
 	github.com/influxdata/influxdb-client-go/v2 v2.13.0
 	github.com/spf13/cobra v1.8.0
 	github.com/spf13/viper v1.18.2
-	github.com/stretchr/testify v1.8.4
+	github.com/stretchr/testify v1.9.0
 	golang.org/x/oauth2 v0.17.0
 	google.golang.org/api v0.167.0
 	gopkg.in/yaml.v3 v3.0.1
