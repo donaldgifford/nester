@@ -5,7 +5,7 @@ toolchain go1.24.1
 
 require (
 	github.com/influxdata/influxdb-client-go/v2 v2.13.0
-	github.com/spf13/cobra v1.8.0
+	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.20.1
 	github.com/stretchr/testify v1.10.0
 	golang.org/x/oauth2 v0.28.0
