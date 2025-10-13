@@ -1,6 +1,7 @@
 module github.com/donaldgifford/nester
 
-go 1.21.4
+go 1.24.0
+
 toolchain go1.24.1
 
 require (
@@ -8,7 +9,7 @@ require (
 	github.com/spf13/cobra v1.8.0
 	github.com/spf13/viper v1.20.1
 	github.com/stretchr/testify v1.10.0
-	golang.org/x/oauth2 v0.28.0
+	golang.org/x/oauth2 v0.32.0
 	google.golang.org/api v0.215.0
 	gopkg.in/yaml.v3 v3.0.1
 )
